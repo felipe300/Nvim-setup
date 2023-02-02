@@ -15,8 +15,8 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 -- when file is saved
 vim.cmd([[ 
   augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+  autocmd!
+  autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -119,6 +119,16 @@ return packer.startup(function(use)
 		module = "tailwindcss-colors",
 		consfig = function()
 			require("tailwindcss-colors").setup()
+		end,
+	})
+
+	-- css colors
+	-- Choose between virtual, backgroundfull or foregroundfull, last not recommended
+	use({
+		"RRethy/vim-hexokinase",
+		run = "make hexokinase",
+		setup = function()
+			vim.g.Hexokinase_highlighters = { "backgroundfull" }
 		end,
 	})
 

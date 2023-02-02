@@ -239,6 +239,12 @@ _G.packer_plugins = {
     path = "/home/pipo/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/ThePrimeagen/vim-be-good"
   },
+  ["vim-hexokinase"] = {
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/pipo/.local/share/nvim/site/pack/packer/opt/vim-hexokinase",
+    url = "https://github.com/RRethy/vim-hexokinase"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/pipo/.local/share/nvim/site/pack/packer/start/vim-maximizer",
@@ -290,6 +296,13 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
+-- Setup for: vim-hexokinase
+time([[Setup for vim-hexokinase]], true)
+try_loadstring("\27LJ\2\nL\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\19backgroundfull\28Hexokinase_highlighters\6g\bvim\0", "setup", "vim-hexokinase")
+time([[Setup for vim-hexokinase]], false)
+time([[packadd for vim-hexokinase]], true)
+vim.cmd [[packadd vim-hexokinase]]
+time([[packadd for vim-hexokinase]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
